@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 75th Birthday, Pamela Hulbert | AeroVista</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: 
+        radial-gradient(ellipse at top left, rgba(0, 128, 128, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(255, 210, 127, 0.08) 0%, transparent 70%),
+        linear-gradient(135deg, #0a0a0d 0%, #1a1a1d 25%, #0d0a0a 50%, #1a1a1d 75%, #0a0a0d 100%);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #f8f8f2;
+      text-align: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* Jazz club texture - subtle vinyl/stage curtain */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.1) 0px,
+          transparent 1px,
+          transparent 2px,
+          rgba(0, 0, 0, 0.1) 3px
+        );
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+    /* Spotlight and ambient lighting effect */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 210, 127, 0.15) 0%, transparent 35%),
+        radial-gradient(circle at 70% 80%, rgba(0, 128, 128, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 50% 50%, rgba(218, 165, 32, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+      animation: spotlightGlow 25s ease-in-out infinite;
+    }
+    @keyframes spotlightGlow {
+      0%, 100% { opacity: 0.6; transform: rotate(0deg) scale(1); }
+      50% { opacity: 0.9; transform: rotate(180deg) scale(1.1); }
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin: 1rem 0;
+      color: #ffd27f;
+      text-shadow: 
+        0 0 20px rgba(255, 210, 127, 0.5),
+        0 0 40px rgba(255, 210, 127, 0.3);
+      font-family: 'Georgia', serif;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin: 0.5rem 0 2rem;
+      color: #daa520;
+      font-style: italic;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: rgba(255, 210, 127, 0.8);
+      margin: 1rem 0;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .quality-indicator {
+      font-size: 0.6em;
+      color: #daa520;
+      font-weight: normal;
+      vertical-align: middle;
+      margin-left: 1rem;
+      opacity: 0.8;
+    }
+    .album-art-wrapper {
+      position: relative;
+      margin: 2rem auto;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .album-art {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 
+        0 0 40px rgba(255, 210, 127, 0.4),
+        0 0 80px rgba(0, 128, 128, 0.3),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+      border: 3px solid rgba(255, 210, 127, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .album-art:hover {
+      transform: scale(1.02);
+      box-shadow: 
+        0 0 60px rgba(255, 210, 127, 0.6),
+        0 0 100px rgba(0, 128, 128, 0.4),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+    .visualizer-modes {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .mode-btn {
+      padding: 0.6rem 1.2rem;
+      background: rgba(0, 128, 128, 0.2);
+      border: 2px solid rgba(255, 210, 127, 0.3);
+      border-radius: 8px;
+      color: #ffd27f;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+    .mode-btn:hover {
+      background: rgba(0, 128, 128, 0.4);
+      border-color: #ffd27f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 210, 127, 0.3);
+    }
+    .mode-btn.active {
+      background: linear-gradient(135deg, rgba(0, 128, 128, 0.4), rgba(255, 210, 127, 0.3));
+      border-color: #ffd27f;
+      box-shadow: 0 0 20px rgba(255, 210, 127, 0.5);
+      color: #fff;
+    }
+    .visualizer-container {
+      margin: 2rem auto;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+      background: 
+        radial-gradient(ellipse at center, rgba(0, 128, 128, 0.15) 0%, transparent 70%),
+        linear-gradient(135deg, rgba(0, 128, 128, 0.25), rgba(139, 69, 19, 0.25));
+      border: 3px solid rgba(255, 210, 127, 0.4);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        inset 0 0 30px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(0, 128, 128, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .visualizer-placeholder {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 60%;
+      max-height: 60%;
+      opacity: 0.3;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+      filter: drop-shadow(0 0 20px rgba(255, 210, 127, 0.3));
+      border-radius: 8px;
+    }
+    .visualizer-placeholder.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      position: relative;
+      z-index: 2;
+    }
+    .player-container {
+      margin: 2rem auto;
+      max-width: 800px;
+      background: 
+        radial-gradient(ellipse at top, rgba(0, 128, 128, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(0, 128, 128, 0.12), rgba(139, 69, 19, 0.12));
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 210, 127, 0.3);
+      box-shadow: 
+        inset 0 0 30px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(0, 128, 128, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .playlist-container {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 210, 127, 0.2);
+    }
+    .playlist-item {
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      background: rgba(0, 128, 128, 0.1);
+      border: 1px solid rgba(255, 210, 127, 0.2);
+      border-radius: 6px;
+      cursor: grab;
+      transition: all 0.3s ease;
+      text-align: left;
+      user-select: none;
+    }
+    .playlist-item[draggable="true"] {
+      cursor: grab;
+    }
+    .playlist-item[draggable="true"]:active {
+      cursor: grabbing;
+    }
+    .playlist-item:hover {
+      background: rgba(0, 128, 128, 0.3);
+      border-color: #ffd27f;
+      transform: translateX(5px);
+    }
+    .playlist-item.active {
+      background: rgba(0, 128, 128, 0.4);
+      border-color: #ffd27f;
+      box-shadow: 0 0 15px rgba(255, 210, 127, 0.4);
+    }
+    .playlist-item.dragging {
+      opacity: 0.5;
+      transform: scale(0.95);
+      cursor: grabbing;
+      border-color: #ffd27f;
+      box-shadow: 0 4px 20px rgba(255, 210, 127, 0.6);
+    }
+    .playlist-item.drag-over {
+      border-top: 3px solid #ffd27f;
+      background: rgba(255, 210, 127, 0.2);
+      transform: translateY(-2px);
+    }
+    .playlist-item-title {
+      font-weight: bold;
+      color: #ffd27f;
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+    }
+    .playlist-item-subtitle {
+      color: rgba(255, 210, 127, 0.7);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+    .control-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, rgba(0, 128, 128, 0.3), rgba(255, 210, 127, 0.2));
+      border: 2px solid rgba(255, 210, 127, 0.4);
+      border-radius: 8px;
+      color: #ffd27f;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+    button:hover {
+      background: linear-gradient(135deg, rgba(0, 128, 128, 0.5), rgba(255, 210, 127, 0.4));
+      border-color: #ffd27f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 210, 127, 0.4);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    .play-btn, .pause-btn {
+      font-size: 1.2rem;
+      padding: 0.9rem 2rem;
+      background: linear-gradient(135deg, #ffd27f, #daa520);
+      border-color: #ffd27f;
+      color: #1a1a1a;
+      font-weight: bold;
+    }
+    .progress-container {
+      width: 100%;
+      margin: 1rem 0;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      border: 1px solid rgba(255, 210, 127, 0.3);
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #008080, #ffd27f, #8b4513);
+      width: 0%;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 10px rgba(255, 210, 127, 0.5);
+      position: relative;
+      z-index: 2;
+    }
+    .buffer-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      width: 0%;
+      transition: width 0.3s linear;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ffd27f;
+    }
+    .volume-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+      color: #ffd27f;
+    }
+    .volume-slider {
+      width: 200px;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      border: 1px solid rgba(255, 210, 127, 0.3);
+    }
+    .volume-slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #ffd27f;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 210, 127, 0.5), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 210, 127, 0.5);
+    }
+    .volume-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: #ffd27f;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid rgba(255, 210, 127, 0.5);
+      box-shadow: 0 0 10px rgba(255, 210, 127, 0.5), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
+    }
+    .lyrics-container {
+      margin: 2rem auto;
+      max-width: 700px;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 210, 127, 0.2);
+    }
+    .lyrics-title {
+      font-size: 1.3rem;
+      color: #ffd27f;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .lyrics-content {
+      text-align: left;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      white-space: pre-wrap;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    audio {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .album-art {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+      .control-buttons {
+        flex-wrap: wrap;
+      }
+      .lyrics-content {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎙️ Happy 75th Birthday <span class="quality-indicator">HQ Audio</span></h1>
+    <h2>Pamela Gene Miller → Pamela Hulbert</h2>
+    <h3>Born November 16, 1950 · Gary, Indiana</h3>
+    <div style="margin: 1rem 0; font-size: 0.85rem; color: rgba(255, 210, 127, 0.7);">
+      <span>Powered by </span>
+      <a href="https://aerovista.us" target="_blank" style="color: #ffd27f; text-decoration: none; font-weight: bold; transition: color 0.3s ease;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#ffd27f'">AeroVista</a>
+      <span> · </span>
+      <a href="https://github.com/aerovista-us" target="_blank" style="color: #ffd27f; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#ffd27f'">GitHub</a>
+    </div>
+
+    <div class="album-art-wrapper">
+      <img src="images/placeholder.jpg" alt="Pamela Hulbert Birthday Album Art" class="album-art" id="albumArt" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div style="width: 500px; height: 500px; background: linear-gradient(135deg, rgba(0, 128, 128, 0.3), rgba(255, 210, 127, 0.2)); border-radius: 12px; display: none; align-items: center; justify-content: center; font-size: 4rem; color: #ffd27f; text-shadow: 0 0 20px rgba(255, 210, 127, 0.5);">🎙️</div>
+    </div>
+
+    <div class="visualizer-modes">
+      <button class="mode-btn active" data-mode="bars">Bars</button>
+      <button class="mode-btn" data-mode="circle">Circle</button>
+      <button class="mode-btn" data-mode="waveform">Waveform</button>
+      <button class="mode-btn" data-mode="vinyl">Vinyl</button>
+      <button class="mode-btn" data-mode="spotlight">Spotlight</button>
+    </div>
+
+    <div class="visualizer-container">
+      <img src="images/placeholder.jpg" alt="Pamela Hulbert" class="visualizer-placeholder" id="visualizerPlaceholder" onerror="this.style.display='none';" />
+      <canvas id="visualizer"></canvas>
+    </div>
+
+    <div class="player-container">
+      <div class="playlist-container">
+        <h4 style="color: #ffd27f; margin-top: 0; text-transform: uppercase; letter-spacing: 2px;">Playlist</h4>
+        <div class="playlist-item active" data-track="0" draggable="true">
+          <div class="playlist-item-title">A Birthday Swing for Pamela Hulbert</div>
+          <div class="playlist-item-subtitle">Birthday Swing · Big Band</div>
+        </div>
+        <div class="playlist-item" data-track="1" draggable="true">
+          <div class="playlist-item-title">Midnight Toast for Pam</div>
+          <div class="playlist-item-subtitle">Late-Night Jazz Lounge</div>
+        </div>
+        <div class="playlist-item" data-track="2" draggable="true">
+          <div class="playlist-item-title">Seventy-Five Years of Swing — For Pamela Hulbert</div>
+          <div class="playlist-item-subtitle">Crooner Version</div>
+        </div>
+        <div class="playlist-item" data-track="3" draggable="true">
+          <div class="playlist-item-title">Seventy-Five Years of Swing</div>
+          <div class="playlist-item-subtitle">Swing Version</div>
+        </div>
+      </div>
+
+      <div class="control-buttons">
+        <button id="prevBtn">⏮ Prev</button>
+        <button id="playPauseBtn" class="play-btn">▶ Play</button>
+        <button id="stopBtn">⏹ Stop</button>
+        <button id="nextBtn">Next ⏭</button>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="buffer-fill" id="bufferFill"></div>
+        </div>
+        <div class="time-display">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+          <span id="loadingIndicator" style="display: none; margin-left: 1rem; color: #ffd27f;">⏳ Loading...</span>
+        </div>
+      </div>
+
+      <div class="volume-control">
+        <span>🔊</span>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
+        <span id="volumeValue">100%</span>
+      </div>
+    </div>
+
+    <div class="lyrics-container" id="lyricsContainer">
+      <div class="lyrics-title">Lyrics</div>
+      <div class="lyrics-content" id="lyricsContent">Select a track to view lyrics...</div>
+    </div>
+
+    <audio id="audioPlayer" preload="auto" crossorigin="anonymous"></audio>
+  </div>
+
+  <!-- Footer -->
+  <footer style="margin-top: 3rem; padding: 2rem 1rem; border-top: 1px solid rgba(255, 210, 127, 0.2); text-align: center; color: rgba(255, 210, 127, 0.6); font-size: 0.85rem;">
+    <p style="margin: 0.5rem 0;">
+      <span>Powered by </span>
+      <a href="https://aerovista.us" target="_blank" style="color: #ffd27f; text-decoration: none; font-weight: bold; transition: color 0.3s ease;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#ffd27f'">AeroVista</a>
+      <span> · </span>
+      <a href="https://aerovista.web.app" target="_blank" style="color: #ffd27f; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#ffd27f'">Web App</a>
+      <span> · </span>
+      <a href="https://github.com/aerovista-us" target="_blank" style="color: #ffd27f; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#ffd27f'">GitHub</a>
+    </p>
+    <p style="margin: 0.5rem 0; font-size: 0.75rem; opacity: 0.7;">
+      © 2024 AeroVista. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // Playlist tracks with lyrics
+    const tracks = [
+      {
+        title: "A Birthday Swing for Pamela Hulbert",
+        subtitle: "Birthday Swing · Big Band",
+        file: "audio/A Birthday Swing for Pamela Hulbert.mp3",
+        lyrics: `[Intro]
+Pamela Gene Miller… born November Sixteenth, Nineteen-Fifty—
+From Gary, Indiana to every heart she's touched…
+Tonight, we swing in your honor, Ms. Hulbert.
+
+[Verse 1]
+Another year of laughter,
+Another year of grace.
+The candles keep on glowing
+Like the smile upon her face.
+From daughter days in Indiana
+To the life and love she knew—
+Oh, Pam, you keep on shining
+With that timeless golden hue.
+
+[Chorus]
+Happy birthday, lovely Pam,
+The band's all here for you.
+Seventy-five years of swing and charm—
+Still dancing in the groove.
+A matriarch, a guiding light,
+A heart so warm and true…
+Happy birthday, Ms. Hulbert—
+This night belongs to you.
+
+[Bridge]
+Through every year, through every change,
+Your rhythm stayed the same—
+A gentle strength, a steady beat,
+A song that bears your name.
+
+[Final Chorus]
+So raise the lights, lift up the horns,
+Let all the brass shine through—
+Happy birthday, dear Pamela—
+The world still swings with you.`
+      },
+      {
+        title: "Midnight Toast for Pam",
+        subtitle: "Late-Night Jazz Lounge",
+        file: "audio/Midnight Toast for Pam.mp3",
+        lyrics: `[Verse]
+In a quiet room past midnight,
+Where the low lights fade to gold—
+There's a woman with a lifetime
+In the stories that she holds.
+Born in Gary, raised with rhythm,
+Found her footsteps deep and true…
+Pamela, this quiet evening,
+All my toasts belong to you.
+
+[Hook]
+So here's to your years,
+To the love that you grew…
+A midnight toast to Pam—
+Still dancing in the groove.`
+      },
+      {
+        title: "Seventy-Five Years of Swing — For Pamela Hulbert",
+        subtitle: "Crooner Version",
+        file: "audio/Seventy-Five Years of Swing — For Pamela Hulbert.mp3",
+        lyrics: `[Verse]
+Pam…
+Born… in Gary, Indiana…
+November… Sixteenth… Nineteen-Fifty…
+Your life…
+Has been a melody…
+That time…
+Still loves to play…
+
+[Chorus]
+Happy birthday…
+Ms. Hulbert…
+Seventy-five years…
+Of swing…
+And shine…
+Still dancing…
+In the groove…
+Each moment…
+A perfect rhyme…`
+      },
+      {
+        title: "Seventy-Five Years of Swing",
+        subtitle: "Swing Version",
+        file: "audio/Seventy-Five Years of Swing.mp3",
+        lyrics: `Happy birthday, lovely Pam,
+The band's all here for you.
+Seventy-five years of swing and charm—
+Still dancing in the groove.
+A matriarch, a guiding light,
+A heart so warm and true…
+Happy birthday, Ms. Hulbert—
+This night belongs to you.`
+      }
+    ];
+
+    let currentTrackIndex = 0;
+    const audio = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressFill = document.getElementById('progressFill');
+    const bufferFill = document.getElementById('bufferFill');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalTimeEl = document.getElementById('totalTime');
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const volumeValue = document.getElementById('volumeValue');
+    const canvas = document.getElementById('visualizer');
+    const ctx = canvas.getContext('2d');
+    const visualizerPlaceholder = document.getElementById('visualizerPlaceholder');
+    const playlistContainer = document.querySelector('.playlist-container');
+    const lyricsContent = document.getElementById('lyricsContent');
+    let playlistItems = document.querySelectorAll('.playlist-item');
+    let draggedIndex = null;
+
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Audio context and analyzer - Enhanced quality
+    let audioContext;
+    let analyser;
+    let dataArray;
+    let source;
+    let gainNode;
+    let visualizerMode = 'bars';
+    let smoothingTimeConstant = 0.4;
+    let isAudioContextInitialized = false;
+
+    function cleanupAudioContext() {
+      if (gainNode) {
+        try {
+          gainNode.disconnect();
+        } catch (e) {
+          console.warn('Error disconnecting gainNode:', e);
+        }
+      }
+      if (analyser) {
+        try {
+          analyser.disconnect();
+        } catch (e) {
+          console.warn('Error disconnecting analyser:', e);
+        }
+      }
+    }
+
+    function initAudioContext() {
+      if (!audioContext) {
+        try {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)({
+            sampleRate: 48000
+          });
+        } catch (e) {
+          console.error('Error creating AudioContext:', e);
+          return;
+        }
+      }
+
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().catch(e => {
+          console.warn('Error resuming AudioContext:', e);
+        });
+      }
+      
+      if (!source) {
+        try {
+          source = audioContext.createMediaElementSource(audio);
+          isAudioContextInitialized = true;
+        } catch (e) {
+          console.error('Error creating MediaElementSource (may already exist):', e);
+          return;
+        }
+      }
+      
+      if (!gainNode || !analyser) {
+        try {
+          if (gainNode) {
+            try { gainNode.disconnect(); } catch (e) {}
+          }
+          if (analyser) {
+            try { analyser.disconnect(); } catch (e) {}
+          }
+          
+          gainNode = audioContext.createGain();
+          gainNode.gain.value = 1.0;
+          
+          analyser = audioContext.createAnalyser();
+          analyser.fftSize = 2048;
+          analyser.smoothingTimeConstant = smoothingTimeConstant;
+          analyser.minDecibels = -90;
+          analyser.maxDecibels = -10;
+          
+          source.connect(gainNode);
+          gainNode.connect(analyser);
+          analyser.connect(audioContext.destination);
+          
+          dataArray = new Uint8Array(analyser.frequencyBinCount);
+        } catch (e) {
+          console.error('Error initializing audio nodes:', e);
+        }
+      }
+    }
+
+    function updateBufferProgress() {
+      if (audio.buffered.length > 0 && audio.duration) {
+        const bufferedEnd = audio.buffered.end(audio.buffered.length - 1);
+        const bufferedPercent = (bufferedEnd / audio.duration) * 100;
+        bufferFill.style.width = bufferedPercent + '%';
+      }
+    }
+
+    function loadTrack(index) {
+      currentTrackIndex = index;
+      const track = tracks[index];
+      
+      loadingIndicator.style.display = 'inline';
+      bufferFill.style.width = '0%';
+      progressFill.style.width = '0%';
+      
+      if (gainNode && analyser) {
+        try {
+          gainNode.disconnect();
+          analyser.disconnect();
+          source.connect(gainNode);
+          gainNode.connect(analyser);
+          analyser.connect(audioContext.destination);
+        } catch (e) {
+          initAudioContext();
+        }
+      }
+      
+      audio.src = track.file;
+      audio.load();
+      
+      playlistItems = document.querySelectorAll('.playlist-item');
+      playlistItems.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+      
+      // Update lyrics
+      lyricsContent.textContent = track.lyrics || 'No lyrics available for this track.';
+      
+      console.log('Loading track:', track.title, 'Path:', track.file);
+    }
+
+    function formatTime(seconds) {
+      if (!isFinite(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function updateProgress() {
+      if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = progress + '%';
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+        updateBufferProgress();
+      }
+    }
+
+    function renderPlaylist() {
+      const playlistHTML = playlistContainer.querySelector('h4').outerHTML + 
+        tracks.map((track, index) => `
+          <div class="playlist-item ${index === currentTrackIndex ? 'active' : ''}" 
+               data-track="${index}" 
+               draggable="true">
+            <div class="playlist-item-title">${track.title}</div>
+            <div class="playlist-item-subtitle">${track.subtitle}</div>
+          </div>
+        `).join('');
+      
+      playlistContainer.innerHTML = playlistHTML;
+      playlistItems = document.querySelectorAll('.playlist-item');
+      attachPlaylistEventListeners();
+    }
+
+    function attachPlaylistEventListeners() {
+      playlistItems.forEach((item, index) => {
+        const newItem = item.cloneNode(true);
+        item.parentNode.replaceChild(newItem, item);
+        
+        newItem.addEventListener('click', async (e) => {
+          if (newItem.classList.contains('dragging')) return;
+          
+          loadTrack(index);
+          audio.addEventListener('canplay', async () => {
+            try {
+              initAudioContext();
+              if (audioContext && audioContext.state === 'suspended') {
+                await audioContext.resume();
+              }
+              await audio.play();
+              playPauseBtn.textContent = '⏸ Pause';
+              playPauseBtn.classList.add('pause-btn');
+              playPauseBtn.classList.remove('play-btn');
+            } catch (e) {
+              console.error('Error playing after playlist click:', e);
+              alert('Error playing track. Please try again.');
+            }
+          }, { once: true });
+        });
+
+        newItem.addEventListener('dragstart', (e) => {
+          draggedIndex = parseInt(newItem.dataset.track);
+          newItem.classList.add('dragging');
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/html', newItem.innerHTML);
+        });
+
+        newItem.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+          const targetIndex = parseInt(newItem.dataset.track);
+          if (targetIndex !== draggedIndex) {
+            newItem.classList.add('drag-over');
+          }
+        });
+
+        newItem.addEventListener('dragleave', () => {
+          newItem.classList.remove('drag-over');
+        });
+
+        newItem.addEventListener('drop', (e) => {
+          e.preventDefault();
+          newItem.classList.remove('drag-over');
+          
+          if (draggedIndex === null) return;
+          
+          const targetIndex = parseInt(newItem.dataset.track);
+          if (targetIndex === draggedIndex) return;
+
+          const draggedTrack = tracks[draggedIndex];
+          tracks.splice(draggedIndex, 1);
+          tracks.splice(targetIndex, 0, draggedTrack);
+
+          if (currentTrackIndex === draggedIndex) {
+            currentTrackIndex = targetIndex;
+          } else if (currentTrackIndex === targetIndex) {
+            if (draggedIndex < targetIndex) {
+              currentTrackIndex = targetIndex - 1;
+            } else {
+              currentTrackIndex = targetIndex + 1;
+            }
+          } else if (draggedIndex < currentTrackIndex && targetIndex >= currentTrackIndex) {
+            currentTrackIndex--;
+          } else if (draggedIndex > currentTrackIndex && targetIndex <= currentTrackIndex) {
+            currentTrackIndex++;
+          }
+
+          renderPlaylist();
+        });
+
+        newItem.addEventListener('dragend', () => {
+          newItem.classList.remove('dragging');
+          draggedIndex = null;
+          playlistItems.forEach(item => item.classList.remove('drag-over'));
+        });
+      });
+    }
+
+    attachPlaylistEventListeners();
+
+    playPauseBtn.addEventListener('click', async () => {
+      if (audio.paused) {
+        initAudioContext();
+        
+        if (audioContext && audioContext.state === 'suspended') {
+          try {
+            await audioContext.resume();
+          } catch (e) {
+            console.warn('Error resuming AudioContext:', e);
+          }
+        }
+        
+        try {
+          await audio.play();
+          playPauseBtn.textContent = '⏸ Pause';
+          playPauseBtn.classList.add('pause-btn');
+          playPauseBtn.classList.remove('play-btn');
+        } catch (e) {
+          console.error('Error playing audio:', e);
+          alert('Error playing audio. Please try again.');
+        }
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = '▶ Play';
+        playPauseBtn.classList.remove('pause-btn');
+        playPauseBtn.classList.add('play-btn');
+      }
+    });
+
+    stopBtn.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+      playPauseBtn.textContent = '▶ Play';
+      playPauseBtn.classList.remove('pause-btn');
+      playPauseBtn.classList.add('play-btn');
+    });
+
+    prevBtn.addEventListener('click', async () => {
+      const wasPlaying = !audio.paused;
+      const newIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+      loadTrack(newIndex);
+      if (wasPlaying) {
+        audio.addEventListener('canplay', async () => {
+          try {
+            initAudioContext();
+            if (audioContext && audioContext.state === 'suspended') {
+              await audioContext.resume();
+            }
+            await audio.play();
+          } catch (e) {
+            console.error('Error playing after track change:', e);
+          }
+        }, { once: true });
+      }
+    });
+
+    nextBtn.addEventListener('click', async () => {
+      const wasPlaying = !audio.paused;
+      const newIndex = (currentTrackIndex + 1) % tracks.length;
+      loadTrack(newIndex);
+      if (wasPlaying) {
+        audio.addEventListener('canplay', async () => {
+          try {
+            initAudioContext();
+            if (audioContext && audioContext.state === 'suspended') {
+              await audioContext.resume();
+            }
+            await audio.play();
+          } catch (e) {
+            console.error('Error playing after track change:', e);
+          }
+        }, { once: true });
+      }
+    });
+
+    audio.addEventListener('ended', async () => {
+      const newIndex = (currentTrackIndex + 1) % tracks.length;
+      loadTrack(newIndex);
+      audio.addEventListener('canplay', async () => {
+        try {
+          initAudioContext();
+          if (audioContext && audioContext.state === 'suspended') {
+            await audioContext.resume();
+          }
+          await audio.play();
+        } catch (e) {
+          console.error('Error auto-playing next track:', e);
+        }
+      }, { once: true });
+    });
+
+    progressBar.addEventListener('click', (e) => {
+      if (audio.duration) {
+        const rect = progressBar.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        audio.currentTime = percent * audio.duration;
+      }
+    });
+
+    volumeSlider.addEventListener('input', (e) => {
+      const volume = e.target.value / 100;
+      audio.volume = volume;
+      volumeValue.textContent = e.target.value + '%';
+    });
+
+    audio.addEventListener('loadstart', () => {
+      loadingIndicator.style.display = 'inline';
+      bufferFill.style.width = '0%';
+    });
+
+    audio.addEventListener('loadeddata', () => {
+      updateBufferProgress();
+    });
+
+    audio.addEventListener('progress', () => {
+      updateBufferProgress();
+    });
+
+    audio.addEventListener('canplay', () => {
+      loadingIndicator.style.display = 'none';
+      updateBufferProgress();
+    });
+
+    audio.addEventListener('canplaythrough', () => {
+      loadingIndicator.style.display = 'none';
+      updateBufferProgress();
+      console.log('Audio can play through without buffering');
+    });
+
+    audio.addEventListener('waiting', () => {
+      loadingIndicator.style.display = 'inline';
+    });
+
+    audio.addEventListener('playing', () => {
+      loadingIndicator.style.display = 'none';
+    });
+
+    audio.addEventListener('error', (e) => {
+      loadingIndicator.style.display = 'none';
+      console.error('Audio error:', e);
+      const error = audio.error;
+      if (error) {
+        let errorMsg = 'Error loading audio: ';
+        const currentTrack = tracks[currentTrackIndex];
+        const fileName = currentTrack ? currentTrack.file : 'unknown';
+        
+        switch (error.code) {
+          case error.MEDIA_ERR_ABORTED:
+            errorMsg += 'Playback aborted';
+            break;
+          case error.MEDIA_ERR_NETWORK:
+            errorMsg += `Network error loading "${fileName}". Please check your connection and try again.`;
+            break;
+          case error.MEDIA_ERR_DECODE:
+            errorMsg += `Decoding error for "${fileName}". File may be corrupted or in an unsupported format.`;
+            break;
+          case error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+            errorMsg += `Audio format not supported for "${fileName}". Please ensure the file is a valid MP3.`;
+            break;
+          default:
+            errorMsg += `Unknown error loading "${fileName}"`;
+        }
+        
+        if (audio.networkState === audio.NETWORK_NO_SOURCE) {
+          errorMsg = `File not found: "${fileName}". The audio file may not be uploaded to the server.`;
+        }
+        
+        console.error('Full error details:', {
+          errorCode: error.code,
+          errorMessage: errorMsg,
+          currentTrack: currentTrack,
+          audioSrc: audio.src,
+          networkState: audio.networkState,
+          readyState: audio.readyState
+        });
+        
+        alert(errorMsg);
+      }
+    });
+
+    audio.addEventListener('stalled', () => {
+      loadingIndicator.style.display = 'inline';
+      console.warn('Audio loading stalled');
+    });
+
+    audio.addEventListener('suspend', () => {
+      console.log('Audio loading suspended');
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      totalTimeEl.textContent = formatTime(audio.duration);
+      updateBufferProgress();
+    });
+
+    audio.addEventListener('timeupdate', updateProgress);
+
+    loadTrack(0);
+
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    modeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        visualizerMode = btn.dataset.mode;
+      });
+    });
+
+    function drawVisualizer() {
+      requestAnimationFrame(drawVisualizer);
+
+      if (!analyser || audio.paused || audio.ended) {
+        if (visualizerPlaceholder) {
+          visualizerPlaceholder.classList.remove('hidden');
+        }
+        if (analyser) {
+          ctx.fillStyle = 'rgba(13, 13, 13, 0.3)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        return;
+      }
+
+      if (visualizerPlaceholder) {
+        visualizerPlaceholder.classList.add('hidden');
+      }
+
+      ctx.fillStyle = 'rgba(13, 13, 13, 0.2)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      switch(visualizerMode) {
+        case 'bars':
+          drawBars();
+          break;
+        case 'circle':
+          drawCircle();
+          break;
+        case 'waveform':
+          drawWaveform();
+          break;
+        case 'vinyl':
+          drawVinyl();
+          break;
+        case 'spotlight':
+          drawSpotlight();
+          break;
+      }
+    }
+
+    function drawBars() {
+      analyser.getByteFrequencyData(dataArray);
+      const barCount = 128;
+      const barWidth = canvas.width / barCount;
+      let x = 0;
+
+      for (let i = 0; i < barCount; i++) {
+        const dataIndex = Math.floor((i / barCount) * dataArray.length);
+        const barHeight = (dataArray[dataIndex] / 255) * canvas.height * 0.9;
+
+        const gradient = ctx.createLinearGradient(0, canvas.height, 0, canvas.height - barHeight);
+        gradient.addColorStop(0, '#008080');
+        gradient.addColorStop(0.5, '#ffd27f');
+        gradient.addColorStop(1, '#8b4513');
+
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x, canvas.height - barHeight, barWidth - 2, barHeight);
+
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = '#ffd27f';
+        ctx.fillRect(x, canvas.height - barHeight, barWidth - 2, barHeight);
+        ctx.shadowBlur = 0;
+
+        x += barWidth;
+      }
+    }
+
+    function drawCircle() {
+      analyser.getByteFrequencyData(dataArray);
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = Math.min(canvas.width, canvas.height) / 3;
+      const bars = 64;
+
+      ctx.save();
+      ctx.translate(centerX, centerY);
+
+      for (let i = 0; i < bars; i++) {
+        const angle = (i / bars) * Math.PI * 2;
+        const dataIndex = Math.floor((i / bars) * dataArray.length);
+        const barLength = (dataArray[dataIndex] / 255) * radius * 0.8;
+
+        ctx.save();
+        ctx.rotate(angle);
+        const hue = 180 + (i / bars) * 60; // Teal to gold range
+        ctx.strokeStyle = `hsl(${hue}, 70%, 50%)`;
+        ctx.lineWidth = 3;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = ctx.strokeStyle;
+        ctx.beginPath();
+        ctx.moveTo(radius, 0);
+        ctx.lineTo(radius + barLength, 0);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      ctx.restore();
+    }
+
+    function drawWaveform() {
+      analyser.getByteTimeDomainData(dataArray);
+      ctx.strokeStyle = '#ffd27f';
+      ctx.lineWidth = 3;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = '#ffd27f';
+      ctx.beginPath();
+
+      const sliceWidth = canvas.width / dataArray.length;
+      let x = 0;
+
+      for (let i = 0; i < dataArray.length; i++) {
+        const v = dataArray[i] / 128.0;
+        const y = (v * canvas.height) / 2;
+
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+
+        x += sliceWidth;
+      }
+
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+    }
+
+    let vinylRotation = 0;
+    function drawVinyl() {
+      analyser.getByteFrequencyData(dataArray);
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const maxRadius = Math.min(canvas.width, canvas.height) / 2.5;
+      
+      // Get average frequency for rotation speed
+      let sum = 0;
+      for (let i = 0; i < Math.min(10, dataArray.length); i++) {
+        sum += dataArray[i];
+      }
+      const avgIntensity = sum / (10 * 255);
+      vinylRotation += 0.5 + avgIntensity * 2;
+      
+      ctx.save();
+      ctx.translate(centerX, centerY);
+      ctx.rotate((vinylRotation * Math.PI) / 180);
+      
+      // Vinyl record base
+      const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, maxRadius);
+      gradient.addColorStop(0, '#1a1a1a');
+      gradient.addColorStop(0.3, '#2a2a2a');
+      gradient.addColorStop(0.7, '#1a1a1a');
+      gradient.addColorStop(1, '#0a0a0a');
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(0, 0, maxRadius, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Grooves
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.lineWidth = 1;
+      for (let r = maxRadius * 0.3; r < maxRadius; r += 3) {
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      
+      // Center label
+      const labelRadius = maxRadius * 0.3;
+      const labelGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, labelRadius);
+      labelGradient.addColorStop(0, '#ffd27f');
+      labelGradient.addColorStop(1, '#daa520');
+      ctx.fillStyle = labelGradient;
+      ctx.beginPath();
+      ctx.arc(0, 0, labelRadius, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Center hole
+      ctx.fillStyle = '#000';
+      ctx.beginPath();
+      ctx.arc(0, 0, maxRadius * 0.1, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Frequency visualization as grooves
+      ctx.strokeStyle = '#ffd27f';
+      ctx.lineWidth = 2;
+      for (let i = 0; i < 32; i++) {
+        const dataIndex = Math.floor((i / 32) * dataArray.length);
+        const intensity = dataArray[dataIndex] / 255;
+        const angle = (i / 32) * Math.PI * 2;
+        const startRadius = labelRadius + 10;
+        const endRadius = startRadius + intensity * (maxRadius - startRadius - 20);
+        
+        ctx.save();
+        ctx.rotate(angle);
+        ctx.beginPath();
+        ctx.moveTo(startRadius, 0);
+        ctx.lineTo(endRadius, 0);
+        ctx.stroke();
+        ctx.restore();
+      }
+      
+      ctx.restore();
+    }
+
+    let spotlightAngle = 0;
+    function drawSpotlight() {
+      analyser.getByteFrequencyData(dataArray);
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      
+      // Get bass frequencies for spotlight intensity
+      const bassIntensity = (dataArray[0] + dataArray[1] + dataArray[2]) / (255 * 3);
+      spotlightAngle += 0.5;
+      
+      // Draw spotlight cone
+      const spotlightGradient = ctx.createRadialGradient(
+        centerX, centerY - 100, 0,
+        centerX, centerY, Math.max(canvas.width, canvas.height) * 0.8
+      );
+      spotlightGradient.addColorStop(0, `rgba(255, 210, 127, ${0.3 + bassIntensity * 0.4})`);
+      spotlightGradient.addColorStop(0.3, `rgba(255, 210, 127, ${0.2 + bassIntensity * 0.3})`);
+      spotlightGradient.addColorStop(0.6, `rgba(0, 128, 128, ${0.1 + bassIntensity * 0.2})`);
+      spotlightGradient.addColorStop(1, 'transparent');
+      
+      ctx.fillStyle = spotlightGradient;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, Math.max(canvas.width, canvas.height) * 0.8, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Draw frequency bars in spotlight
+      const barCount = 64;
+      const barWidth = canvas.width / barCount;
+      let x = 0;
+      
+      for (let i = 0; i < barCount; i++) {
+        const dataIndex = Math.floor((i / barCount) * dataArray.length);
+        const barHeight = (dataArray[dataIndex] / 255) * canvas.height * 0.6;
+        const y = canvas.height - barHeight;
+        
+        const barGradient = ctx.createLinearGradient(x, y, x, canvas.height);
+        barGradient.addColorStop(0, `rgba(255, 210, 127, ${0.8 + bassIntensity * 0.2})`);
+        barGradient.addColorStop(1, `rgba(0, 128, 128, ${0.6 + bassIntensity * 0.2})`);
+        
+        ctx.fillStyle = barGradient;
+        ctx.fillRect(x, y, barWidth - 2, barHeight);
+        
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = '#ffd27f';
+        ctx.fillRect(x, y, barWidth - 2, barHeight);
+        ctx.shadowBlur = 0;
+        
+        x += barWidth;
+      }
+    }
+
+    drawVisualizer();
+  </script>
+</body>
+</html>
+
