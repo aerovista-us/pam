@@ -1522,6 +1522,53 @@ This night belongs to you.`
     }
 
     drawVisualizer();
+
+    // Birthday Card functionality
+    const openCardBtn = document.getElementById('openCardBtn');
+    const cardOverlay = document.getElementById('cardOverlay');
+    const closeCard = document.getElementById('closeCard');
+    const birthdayCard = document.getElementById('birthdayCard');
+    const cardCover = document.getElementById('cardCover');
+    const cardInstruction = document.getElementById('cardInstruction');
+    let cardOpened = false;
+
+    openCardBtn.addEventListener('click', () => {
+      cardOverlay.classList.add('active');
+      cardOpened = false;
+      birthdayCard.classList.remove('opened');
+      cardInstruction.textContent = 'Click the card to open';
+    });
+
+    closeCard.addEventListener('click', () => {
+      cardOverlay.classList.remove('active');
+      // Reset card state
+      setTimeout(() => {
+        cardOpened = false;
+        birthdayCard.classList.remove('opened');
+        cardInstruction.textContent = 'Click the card to open';
+      }, 800);
+    });
+
+    cardCover.addEventListener('click', () => {
+      if (!cardOpened) {
+        birthdayCard.classList.add('opened');
+        cardOpened = true;
+        cardInstruction.textContent = 'Click outside to close';
+      }
+    });
+
+    cardOverlay.addEventListener('click', (e) => {
+      if (e.target === cardOverlay) {
+        closeCard.click();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && cardOverlay.classList.contains('active')) {
+        closeCard.click();
+      }
+    });
   </script>
 </body>
 </html>
