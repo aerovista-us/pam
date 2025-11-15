@@ -417,6 +417,122 @@
       font-size: 1.1rem;
       font-style: italic;
     }
+    .card-button {
+      margin: 1.5rem 0;
+    }
+    .card-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    .card-overlay.active {
+      display: flex;
+    }
+    .card-container {
+      position: relative;
+      max-width: 1200px;
+      width: 100%;
+      perspective: 2000px;
+    }
+    .card-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: rgba(255, 210, 127, 0.2);
+      border: 2px solid rgba(255, 210, 127, 0.4);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #ffd27f;
+      font-size: 2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 3001;
+    }
+    .card-close:hover {
+      background: rgba(255, 210, 127, 0.4);
+      border-color: #ffd27f;
+      transform: rotate(90deg);
+    }
+    .birthday-card {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+    .birthday-card.opened {
+      transform: rotateY(-180deg);
+    }
+    .card-page {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 
+        0 0 40px rgba(255, 210, 127, 0.3),
+        0 10px 60px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .card-page:hover {
+      transform: scale(1.02);
+    }
+    .card-page img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    .card-cover {
+      z-index: 2;
+    }
+    .card-inside {
+      transform: rotateY(180deg);
+      display: flex;
+      gap: 0;
+    }
+    .card-inside-left,
+    .card-inside-right {
+      flex: 1;
+      width: 50%;
+    }
+    .card-inside-left img,
+    .card-inside-right img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-inside-left {
+      border-radius: 12px 0 0 12px;
+    }
+    .card-inside-right {
+      border-radius: 0 12px 12px 0;
+    }
+    .card-instruction {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 210, 127, 0.8);
+      font-style: italic;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
     audio {
       display: none;
     }
@@ -453,6 +569,12 @@
     <div class="album-art-wrapper">
       <img src="images/Silhouette Style.png" alt="Pamela Hulbert Birthday Album Art" class="album-art" id="albumArt" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
       <div style="width: 500px; height: 500px; background: linear-gradient(135deg, rgba(0, 128, 128, 0.3), rgba(255, 210, 127, 0.2)); border-radius: 12px; display: none; align-items: center; justify-content: center; font-size: 4rem; color: #ffd27f; text-shadow: 0 0 20px rgba(255, 210, 127, 0.5);">🎙️</div>
+    </div>
+
+    <div class="card-button">
+      <button id="openCardBtn" style="font-size: 1.1rem; padding: 1rem 2rem;">
+        💌 Open Birthday Card
+      </button>
     </div>
 
     <div class="visualizer-modes">
@@ -521,6 +643,27 @@
     </div>
 
     <audio id="audioPlayer" preload="auto" crossorigin="anonymous"></audio>
+  </div>
+
+  <!-- Birthday Card Overlay -->
+  <div class="card-overlay" id="cardOverlay">
+    <div class="card-container">
+      <button class="card-close" id="closeCard">×</button>
+      <div class="birthday-card" id="birthdayCard">
+        <div class="card-page card-cover" id="cardCover">
+          <img src="images/pam.bday.cover.png" alt="Birthday Card Cover" />
+        </div>
+        <div class="card-page card-inside" id="cardInside">
+          <div class="card-inside-left">
+            <img src="images/pam.bday.inside.left.png" alt="Card Inside Left" />
+          </div>
+          <div class="card-inside-right">
+            <img src="images/pam.bday.inside.right.png" alt="Card Inside Right" />
+          </div>
+        </div>
+      </div>
+      <div class="card-instruction" id="cardInstruction">Click the card to open</div>
+    </div>
   </div>
 
   <!-- Footer -->
