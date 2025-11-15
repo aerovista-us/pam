@@ -9,6 +9,9 @@
     * {
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       background: 
@@ -241,6 +244,10 @@
       text-align: left;
       user-select: none;
     }
+    .playlist-item:focus-visible {
+      outline: 2px solid #ffd27f;
+      outline-offset: 2px;
+    }
     .playlist-item[draggable="true"] {
       cursor: grab;
     }
@@ -309,6 +316,15 @@
     button:active {
       transform: translateY(0);
     }
+    button:focus-visible {
+      outline: 3px solid #ffd27f;
+      outline-offset: 3px;
+      box-shadow: 0 0 20px rgba(255, 210, 127, 0.6);
+    }
+    .mode-btn:focus-visible {
+      outline: 3px solid #ffd27f;
+      outline-offset: 3px;
+    }
     .play-btn, .pause-btn {
       font-size: 1.2rem;
       padding: 0.9rem 2rem;
@@ -330,6 +346,14 @@
       cursor: pointer;
       position: relative;
       border: 1px solid rgba(255, 210, 127, 0.3);
+      transition: border-color 0.3s ease;
+    }
+    .progress-bar:hover {
+      border-color: rgba(255, 210, 127, 0.5);
+    }
+    .progress-bar:focus-visible {
+      outline: 2px solid #ffd27f;
+      outline-offset: 2px;
     }
     .progress-fill {
       height: 100%;
@@ -374,6 +398,12 @@
       outline: none;
       cursor: pointer;
       border: 1px solid rgba(255, 210, 127, 0.3);
+      transition: border-color 0.3s ease;
+    }
+    .volume-slider:focus-visible {
+      outline: 2px solid #ffd27f;
+      outline-offset: 2px;
+      border-color: #ffd27f;
     }
     .volume-slider::-webkit-slider-thumb {
       appearance: none;
@@ -419,6 +449,19 @@
     }
     .card-button {
       margin: 1.5rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    #openCardBtn {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, rgba(255, 210, 127, 0.3), rgba(0, 128, 128, 0.3));
+      border: 2px solid rgba(255, 210, 127, 0.5);
+      box-shadow: 0 0 20px rgba(255, 210, 127, 0.3);
+    }
+    #openCardBtn:hover {
+      background: linear-gradient(135deg, rgba(255, 210, 127, 0.5), rgba(0, 128, 128, 0.5));
+      box-shadow: 0 0 30px rgba(255, 210, 127, 0.5);
     }
     .card-overlay {
       position: fixed;
@@ -433,9 +476,17 @@
       justify-content: center;
       padding: 2rem;
       overflow-y: auto;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
     .card-overlay.active {
       display: flex;
+      opacity: 1;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .card-container {
       position: relative;
@@ -466,6 +517,10 @@
       border-color: #ffd27f;
       transform: rotate(90deg);
     }
+    .card-close:focus-visible {
+      outline: 3px solid #ffd27f;
+      outline-offset: 3px;
+    }
     .birthday-card {
       position: relative;
       width: 100%;
@@ -491,6 +546,11 @@
     }
     .card-page:hover {
       transform: scale(1.02);
+    }
+    .card-page:focus-visible {
+      outline: 3px solid #ffd27f;
+      outline-offset: 5px;
+      border-radius: 12px;
     }
     .card-page img {
       width: 100%;
@@ -551,6 +611,38 @@
       .lyrics-content {
         font-size: 1rem;
       }
+      .card-overlay {
+        padding: 1rem;
+      }
+      .card-container {
+        max-width: 100%;
+      }
+      .birthday-card {
+        max-width: 100%;
+      }
+      .card-close {
+        top: -40px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+      .card-instruction {
+        bottom: -30px;
+        font-size: 0.8rem;
+      }
+      .card-inside {
+        flex-direction: column;
+      }
+      .card-inside-left,
+      .card-inside-right {
+        width: 100%;
+      }
+      .card-inside-left {
+        border-radius: 12px 12px 0 0;
+      }
+      .card-inside-right {
+        border-radius: 0 0 12px 12px;
+      }
     }
   </style>
 </head>
@@ -572,7 +664,7 @@
     </div>
 
     <div class="card-button">
-      <button id="openCardBtn" style="font-size: 1.1rem; padding: 1rem 2rem;">
+      <button id="openCardBtn" aria-label="Open birthday card">
         💌 Open Birthday Card
       </button>
     </div>
@@ -648,9 +740,9 @@
   <!-- Birthday Card Overlay -->
   <div class="card-overlay" id="cardOverlay">
     <div class="card-container">
-      <button class="card-close" id="closeCard">×</button>
+      <button class="card-close" id="closeCard" aria-label="Close birthday card">×</button>
       <div class="birthday-card" id="birthdayCard">
-        <div class="card-page card-cover" id="cardCover">
+        <div class="card-page card-cover" id="cardCover" tabindex="0" role="button" aria-label="Click to open card">
           <img src="images/pam.bday.cover.png" alt="Birthday Card Cover" />
         </div>
         <div class="card-page card-inside" id="cardInside">
@@ -1549,11 +1641,19 @@ This night belongs to you.`
       }, 800);
     });
 
-    cardCover.addEventListener('click', () => {
+    const openCard = () => {
       if (!cardOpened) {
         birthdayCard.classList.add('opened');
         cardOpened = true;
         cardInstruction.textContent = 'Click outside to close';
+      }
+    };
+
+    cardCover.addEventListener('click', openCard);
+    cardCover.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openCard();
       }
     });
 
